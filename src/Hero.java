@@ -1,4 +1,4 @@
-public class Hero {
+public class Hero implements Comparable<Hero> {
 
     // attributs
     private String name;
@@ -26,5 +26,16 @@ public class Hero {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    // Compare Two Heroes based on their name
+    /**
+     * @param   anotherHero - The Hero to be compared.
+     * @return  A negative integer, zero, or a positive integer as this hero
+     *          is less than, equal to, or greater than the supplied hero object.
+     */
+    @Override
+    public int compareTo(Hero anotherHero) {
+        return this.getName().compareTo(anotherHero.getName());
     }
 }
